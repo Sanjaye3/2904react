@@ -60,7 +60,7 @@ function Movie({movie}){
       <button onClick={() => setshow(!show)} >Toggle Description</button>
       <p style ={parastyle} className="movie-summary">{movie.summary}</p>
       < Counter />
-      disappearance
+       
     </div>
   )
 }
