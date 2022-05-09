@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import { AddColor } from "./ColorBox";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 <script src="js/reactjs/main.js" type = "text/babel"></script>
 
 export default function App() {
@@ -17,19 +19,17 @@ export default function App() {
     <div className="App">
 
     <div className="add-movie-form">
-      <input onChange={(event) => setName(event.target.value)} 
-      placeholder="enter a  name"/>
+       
+      <TextField  onChange={(event) => setName(event.target.value)}    label="Name" variant="outlined" />
+       
+      <TextField  onChange={(event) => setPoster(event.target.value)}    label="Poster" variant="outlined" />
+    
+      <TextField  onChange={(event) => setRating(event.target.value)}   label="Rating" variant="outlined" />
+       
+      <TextField  onChange={(event) => setSummary(event.target.value)}  label="Summary" variant="outlined" />
       
-      <input onChange={(event) => setPoster(event.target.value)} 
-      placeholder="enter a  poster"/>
-      
-      <input onChange={(event) => setRating(event.target.value)} 
-      placeholder="enter a  rating"/>
-      
-      <input onChange={(event) => setSummary(event.target.value)} 
-      placeholder="enter a  summary"/>
-      
-      <button onClick={() =>{setMovieList ([...movieList, newMovie])}}> Add Movie </button>  
+      {/* <button > Add Movie </button>   */}
+      <Button onClick={() =>{setMovieList ([...movieList, newMovie])}} variant="contained">ADD MOVIE</Button>
      
       <div className="movie-list">
       {movieList.map(mv => <Movie movie={mv}/> )} 
